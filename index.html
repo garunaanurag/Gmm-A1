@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en-GB">
+
+<head>
+
+    <meta charset="utf-8">
+    
+    <!-- Insert relevant content inside the following meta tags-->
+    <meta name="author" content="Anurag Shinde">
+    <meta name="description" content="This is a Good Morning Message Maker">
+    <meta property="og:title" content="Good Morning Message Maker"/>
+    <meta property="og:description" content="This is a Good Morning Message Maker">
+    
+    <title>Good Morning Message Maker - Anurag</title>
+    
+    <!-- No need to edit this-->
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website"/>
+
+    <!-- Links to boilerplate CSS and JS files -- DO NOT CHANGE or EDIT THESE!!! -->
+    <link href="./template-files/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="./template-files/script.js" defer></script> 
+    <script type="text/javascript" src="./template-files/html2canvas.js" defer></script> 
+
+    <!-- Links to YOUR CSS and JS files -->
+    <link href="./style-to-edit.css" rel="stylesheet" type="text/css">
+    <script src="script-to-edit.js"></script>
+    
+</head>
+
+<body>
+
+    <header>        
+        
+        <!--DO NOT EDIT THIS -->
+        <button id="openPopup" onclick="showPopup()"> ? </button>
+        
+        <!--Insert your Names after the dash -->
+        <h1>'Good Morning Message Maker' – Anurag Shinde </h1>
+    
+    </header>
+    <main>
+
+        <section id="input">
+        <!-- Markup for your inputs and controls go inside this section -->
+
+        <br>
+        <br>
+        <br>
+
+        <label for="imgSelector" class="h-s">Select Image</label><br>
+        
+        <select id="imgSelector" onchange="changeImg()">
+        
+        <option value="images/surf.jpg">Surf</option>
+        <option value="images/sunflower.jpg">Sunflowers</option>
+        <option value="images/boat.jpg">Boat</option>
+        
+        </select>
+        <br>
+        <br>
+
+
+        <label for="textIndex" class="h-s">Primary Text</label>
+        <br>
+        <input type="text" id="textIndex" oninput="
+        outputText()" placeholder="Choose Primary Text">
+
+        <br>
+        <br>
+
+        <label for="textIndex2" class="h-s">Secondary Text</label>
+
+        <br>
+
+        <input type="text" id="textIndex2" oninput="outputText2()" placeholder="Choose Secondary Text">
+
+        <br>
+        <br>
+
+
+        <!-- For Font family selection -->
+
+        <fieldset>
+
+            <legend class="h-s">Select Font Family</legend>
+
+            <label>
+                <input type="radio" name="font-families" value="cursive" onclick="fontChange()"> Cursive
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="font-families" value="serif" onclick="fontChange()"> Serif
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="font-families" value="sans-serif" onclick="fontChange()"> Sans-Serif
+            </label>
+            <br>
+
+        </fieldset>
+
+        <br>
+        <br>
+
+        <label for="textColor" class="h-s">Text Colour</label>
+
+        <br>
+
+        <select id="textColor" onchange="chooseColor()">
+
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="yellow">Yellow</option>
+            <option value="white">White</option>
+            <option value="black">Black</option>
+            <option value="bisque">Bisque</option>
+            <option value="grey">Grey</option>
+            <option value="brown">Brown</option>
+            
+        </select>
+
+        <br>
+        <br>
+
+        <label for="slider" class="h-s">Font-Size</label>
+        <br>
+        <input type="range" id="slider" min="16" max="64" value="32" oninput="changeSize()">
+
+        </section>
+
+        <!-- Button to Save Image | DO NOT EDIT THIS -->
+        <button id="save-img">Save Image</button>
+
+        <section id="output">
+            <div id="output-canvas">
+
+                <p id="text-1"></p>
+                <p id="text-2"></p>
+
+                <!-- Markup for your image and texts go inside this div -->
+                <!-- Use the ID "text-1" for Text 1 -->
+                <!-- Use the ID "text-2" for Text 2 -->          
+            </div>
+        </section>
+    
+    </main>
+    
+    <!--DO NOT EDIT THIS DIV -->
+    <div id="popupCover" onclick="hidePopup()"></div>
+
+    <!-- 
+        Once you are done with your assignment, replace the instructions text inside the div with id "popup" with the following text: This tool was programmed by [insert names], as part of a unit titled 'Coding for the Web', facilitated during the 2023/24 odd semester at Srishti Manipal Institute. 
+    -->
+    <div id="popup">
+
+         <p>
+            Coding for the Web '23/24 --- Assignment 1:
+        </p>    
+        <hr>       
+        <p>
+            Using the provided boilerplate, program a 'Good Morning Message Maker'. Include the following types of inputs / elements:
+        </p> 
+        <ol>
+            <li>
+                A dropdown menu to choose between 3 image options. Use the following three categories for the images: <u>Sunrise</u>, <u>Flowers</u>, and <u>Still-Life</u>. The dropdown menu should display the category names. 
+            </li> 
+            <br>   
+            <li>
+                Two text input boxes – one to enter text values for the primary title, and one for the secondary title. 
+            </li> 
+            <br>  
+            <li>
+                A list of radio buttons to toggle between 3 font families for the titles. You may either use the default font-families such as 'cursive', 'serif', and 'sans-serif', or specify your own font families (via font-face). 
+            </li> 
+            <br>  
+            <li>
+                A dropdown menu to choose the font colour. Specify up to 9 colour options. 
+            </li> 
+            <br>  
+            <li>
+                A range slider to adjust the font size (in pixels). 
+            </li> 
+            <br>  
+            <li>
+                A number input to specify text stroke (in pixels). 
+            </li> 
+        </ol>
+        <br>
+        <hr>
+        <ul>
+            <li>
+                Take your time to carefully go through the index.html file and understand the markup. The document has comments with instructions regarding what to add/edit. 
+            </li>
+            <br>  
+            <li>
+                The markup for the inputs and controls have to be included inside the &lt;section&gt; with the id "<u>input</u>"
+                <br>
+                <br>
+                The markup for the &lt;img&gt; and titles/texts have to be included inside the &lt;div&gt; with the id "<u>output-canvas</u>". The titles/texts need to use the ids "<u>text-1</u>"" and "<u>text-2</u>" respectively.
+                <br>
+                <br>
+                Inside the &lt;h1&gt; in &lt;header&gt;, include your names after the dash. 
+            </li>
+            <br>  
+            <li>
+                Make sure to use labels for all the inputs
+            </li>
+            <br>  
+            <li>
+                Once you are done with the functional bits of this assignment, use CSS to override the default styling of the input elements. 
+            </li>
+            <br>  
+            <li>
+                Once your are done with your assignment, replace all the instructions text inside this popup (&lt;div&gt; with the id, "popup") with the following text: 
+                <br>
+                This page was made by [insert names], as part of a unit titled 'Coding for the Web', facilitated during the 2023/24 odd semester at Srishti Manipal Institute.
+                <br>
+            </li>
+        </ul>
+        <br>
+        <hr>
+        <p>
+            DO NOT EDIT the style.css and script.js files! Use the style-to-edit.css and script-to-edit.js files to write your own CSS and JS. 
+        </p>
+        <hr>
+
+    </div>
+
+</body>    
+
+</html>
